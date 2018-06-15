@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bloodpressure_type">
+        <item>低</item>
+        <item>正常</item>
+        <item>轻度</item>
+        <item>中度</item>
+        <item>严重</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="bmi_type">
+        <item>偏瘦</item>
+        <item>正常</item>
+        <item>偏胖</item>
+        <item>肥胖</item>
+        <item>重度肥胖</item>
+        <item>极重度肥胖</item>
+    </string-array>
+</resources>

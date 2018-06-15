@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">血压日记</string>
+
+    <string name="bp_title">血压日记</string>
+    <string name="bp_detail_title">日记详情</string>
+    <string name="bp_time">时间</string>
+    <string name="bp_high">高压（收缩压）</string>
+    <string name="bp_low">低压（舒张压）</string>
+    <string name="bp_pulse">脉搏</string>
+    <string name="bp_device">设备</string>
+    <string name="bp_all">全部</string>
+    <string name="bp_bloodpressure">血压</string>
+    <string name="bp_medicine">服药</string>
+    <string name="bp_weight">体重</string>
+    <string name="bp_height">身高（单位：厘米）</string>
+    <string name="bp_left">左手</string>
+    <string name="bp_right">右手</string>
+    <string name="bp_height_unit">%s厘米</string>
+    <string name="bp_weight_unit">%s公斤</string>
+    <string name="bp_bmi_unit">%s(%s)</string>
+    <string name="bp_add">添加</string>
+    <string name="bp_delete">删除</string>
+    <string name="bp_save">保存</string>
+    <string name="bp_import">导入</string>
+    <string name="bp_export">导出</string>
+    <string name="bp_skip">跳过</string>
+    <string name="bp_main_tips">小提示：\n\n为防止数据因应用删除后丢失，您可以选择将数据导出；\n也可将数据文件拷贝至另一部手机后导入。</string>
+    <string name="bp_bmi_tips">小提示：\n\n设置身高后，即可在体重后显示您的BMI指数。\n体质指数（BMI）= 体重（kg）÷ 身高（m）的平方\n各标准的参考值略有不同。</string>
+    <string name="bp_china">中国标准</string>
+    <string name="bp_asia">亚洲标准</string>
+    <string name="bp_who">WHO标准</string>
+    <string name="bp_bmi">BMI</string>
+
+    <string name="th_title">历史上的今天</string>
+    <string name="th_month">月</string>
+    <string name="th_day">日</string>
+    <string name="th_year_value">%s年</string>
+
+    <string name="bp_bloodpressure_msg">该量血压了，看看有没有降一点了！</string>
+    <string name="bp_medicine_msg">高血压了，药不能停！</string>
+    <string name="bp_weight_msg">今天体重多少了？</string>
+
+    <string name="menu_bmi">BMI</string>
+    <string name="menu_data">导入/导出</string>
+    <string name="menu_today">历史上的今天</string>
+    <string name="menu_calendar">日历</string>
+    <string name="menu_list">列表</string>
+    <string name="menu_notificaiton">通知</string>
+
+    <string name="bp_bmi_cal">BMI计算</string>
+    <string name="bp_bmi_cal_tips">体质指数（BMI）= 体重（kg）÷ 身高（m）的平方</string>
+
+    <!-- 数字键盘 -->
+    <string name="dk_0">0</string>
+    <string name="dk_1">1</string>
+    <string name="dk_2">2</string>
+    <string name="dk_3">3</string>
+    <string name="dk_4">4</string>
+    <string name="dk_5">5</string>
+    <string name="dk_6">6</string>
+    <string name="dk_7">7</string>
+    <string name="dk_8">8</string>
+    <string name="dk_9">9</string>
+    <string name="dk_delete">删除</string>
+    <string name="dk_previous">上一个</string>
+    <string name="dk_next">下一个</string>
+    <string name="dk_dot">.</string>
+    <string name="dk_close">关闭</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.caojun.bloodpressure"
+    android:versionCode="13"
+    android:versionName="1.8.1">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.BloodPressureActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.BloodPressureDetailActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
+            android:label="@string/bp_detail_title"/>
+        <activity android:name=".activity.BMIActivity"
+            android:label="@string/bp_bmi"/>
+        <activity android:name=".activity.TodayActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:label="@string/th_title"/>
+        <service android:name=".service.HttpGetService" />
+        <activity android:name=".activity.WebviewActivity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar" />
+        <receiver android:name=".broadcast.AlarmReceiver" android:process=":newinst"/>
+        <activity android:name=".activity.DataActivity"
+            android:label="@string/menu_data"/>
+        <activity android:name=".activity.NotificaitonSettings"
+            android:label="@string/menu_notificaiton"/>
+        <activity android:name=".activity.BMICalActivity"
+            android:label="@string/bp_bmi_cal"/>
+        <activity android:name=".activity.CalendarActivity"
+            android:label="@string/app_name"/>
+    </application>
+
+</manifest>

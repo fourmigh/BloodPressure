@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.sdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "org.caojun.bloodpressure"
+        minSdkVersion 14
+        targetSdkVersion rootProject.ext.sdkVersion
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'se.emilsjolander:stickylistheaders:latest.release'
+    implementation 'com.github.zhaokaiqiang.klog:library:latest.release'
+    implementation 'com.j256.ormlite:ormlite-android:latest.release'
+    implementation 'com.alibaba:arouter-api:latest.release'
+    annotationProcessor "com.alibaba:arouter-compiler:latest.release"
+    implementation 'com.alibaba:fastjson:latest.release'
+    implementation "com.android.support:design:$androidsupport_version"
+    implementation project(':CalendarLibrary')
+}

@@ -1,0 +1,4 @@
+include ':app'
+
+include ':CalendarLibrary'
+project(':CalendarLibrary').projectDir = new File(settingsDir, '../CaojunLibrary/CalendarLibrary')

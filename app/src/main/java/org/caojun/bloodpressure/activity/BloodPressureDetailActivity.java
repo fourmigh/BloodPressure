@@ -413,10 +413,7 @@ public class BloodPressureDetailActivity extends BaseAppCompatActivity {
                         return true;
                     }
                     boolean isLeft = rbLeft.isChecked();
-                    if (isLeft != bloodPressure.isLeft()) {
-                        return true;
-                    }
-                    return false;
+                    return isLeft != bloodPressure.isLeft();
                 case BloodPressure.Type_Medicine:
                     return false;
                 case BloodPressure.Type_Weight:
@@ -474,6 +471,7 @@ public class BloodPressureDetailActivity extends BaseAppCompatActivity {
             int value = data.getIntExtra("data", 0);
             if (value > 0) {
                 etInput[Index_Pulse].setText(String.valueOf(value));
+                etInput[Index_Pulse].requestFocus();
             }
             return;
         }

@@ -116,19 +116,33 @@
                         android:maxLength="3" />
                 </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/bp_pulse"
-                    android:theme="@style/ItemTheme">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/etPulse"
-                        android:layout_width="match_parent"
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:maxLength="3" />
-                </android.support.design.widget.TextInputLayout>
+                        android:layout_weight="1"
+                        android:hint="@string/bp_pulse"
+                        android:theme="@style/ItemTheme">
+
+                        <EditText
+                            android:id="@+id/etPulse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="3" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageButton
+                        android:id="@+id/ibPulse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_menu_camera"/>
+                </LinearLayout>
             </LinearLayout>
 
             <android.support.design.widget.TextInputLayout

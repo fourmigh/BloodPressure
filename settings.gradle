@@ -2,3 +2,9 @@ include ':app'
 
 include ':CalendarLibrary'
 project(':CalendarLibrary').projectDir = new File(settingsDir, '../CaojunLibrary/CalendarLibrary')
+
+include ':UtilsLibrary'
+project(':UtilsLibrary').projectDir = new File(settingsDir, '../CaojunLibrary/UtilsLibrary')
+
+include ':HeartRateLibrary'
+project(':HeartRateLibrary').projectDir = new File(settingsDir, '../CaojunLibrary/HeartRateLibrary')

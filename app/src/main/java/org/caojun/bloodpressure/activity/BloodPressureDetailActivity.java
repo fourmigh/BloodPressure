@@ -1,5 +1,8 @@
 package org.caojun.bloodpressure.activity;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
@@ -11,18 +14,23 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+
+import org.caojun.activity.BaseAppCompatActivity;
 import org.caojun.bloodpressure.Constant;
 import org.caojun.bloodpressure.R;
 import org.caojun.bloodpressure.ormlite.BloodPressure;
 import org.caojun.bloodpressure.ormlite.BloodPressureDatabase;
 import org.caojun.bloodpressure.utils.DataStorageUtils;
 import org.caojun.bloodpressure.utils.TimeUtils;
+import org.caojun.heartrate.HeartRateActivity;
+import org.caojun.utils.ActivityUtils;
 import org.caojun.widget.DigitalKeyboard;
 
 /**
@@ -30,7 +38,7 @@ import org.caojun.widget.DigitalKeyboard;
  */
 
 @Route(path = Constant.ACTIVITY_BLOODPRESSURE_DETAIL)
-public class BloodPressureDetailActivity extends AppCompatActivity {
+public class BloodPressureDetailActivity extends BaseAppCompatActivity {
 
     private final static int EditText_High = 0;
     private final static int EditText_Low = 1;
@@ -54,6 +62,10 @@ public class BloodPressureDetailActivity extends AppCompatActivity {
 
     private int indexFocused = EditText_High;
 
+    private ImageButton ibPulse;
+    private static final int Request_Pulse = 1;
+    private static final byte Index_Pulse = 2;
+
     @Autowired
     protected BloodPressure bloodPressure;
 
@@ -63,20 +75,20 @@ public class BloodPressureDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bloodpressure_detail);
         ARouter.getInstance().inject(this);
 
-        etTime = (EditText) findViewById(R.id.etTime);
-        rgBloodPressure = (RadioGroup) findViewById(R.id.rgBloodPressure);
+        etTime = findViewById(R.id.etTime);
+        rgBloodPressure = findViewById(R.id.rgBloodPressure);
         rbBloodPressures = new RadioButton[IDType.length];
         for (int i = 0;i < IDType.length;i ++) {
-            rbBloodPressures[i] = (RadioButton) findViewById(IDType[i]);
+            rbBloodPressures[i] = findViewById(IDType[i]);
         }
-        llBloodPressure = (LinearLayout) findViewById(R.id.llBloodPressure);
-        rgHand = (RadioGroup) findViewById(R.id.rgHand);
-        rbLeft = (RadioButton) findViewById(R.id.rbLeft);
-        rbRight = (RadioButton) findViewById(R.id.rbRight);
-        btnSave = (Button) findViewById(R.id.btnSave);
-        btnDelete = (Button) findViewById(R.id.btnDelete);
+        llBloodPressure = findViewById(R.id.llBloodPressure);
+        rgHand = findViewById(R.id.rgHand);
+        rbLeft = findViewById(R.id.rbLeft);
+        rbRight = findViewById(R.id.rbRight);
+        btnSave = findViewById(R.id.btnSave);
+        btnDelete = findViewById(R.id.btnDelete);
 
-        digitalKeyboard = (DigitalKeyboard) findViewById(R.id.digitalKeyboard);
+        digitalKeyboard = findViewById(R.id.digitalKeyboard);
         digitalKeyboard.setOnClickListener(new DigitalKeyboard.OnClickListener() {
             @Override
             public boolean onClick(int key) {
@@ -112,7 +124,7 @@ public class BloodPressureDetailActivity extends AppCompatActivity {
 
         etInput = new EditText[ResInputId.length];
         for (int i = 0;i < ResInputId.length;i ++) {
-            etInput[i] = (EditText) findViewById(ResInputId[i]);
+            etInput[i] = findViewById(ResInputId[i]);
             etInput[i].setOnTouchListener(onTouchListener);
             etInput[i].addTextChangedListener(textWatcher);
         }
@@ -183,6 +195,25 @@ public class BloodPressureDetailActivity extends AppCompatActivity {
 
         doCheckSaveButton();
         doCheckDeleteButton();
+
+        ibPulse = findViewById(R.id.ibPulse);
+        ibPulse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkSelfPermission(Manifest.permission.CAMERA, new ActivityUtils.RequestPermissionListener() {
+                    @Override
+                    public void onSuccess() {
+                        Intent intent = new Intent(BloodPressureDetailActivity.this, HeartRateActivity.class);
+                        startActivityForResult(intent, Request_Pulse);
+                    }
+
+                    @Override
+                    public void onFail() {
+
+                    }
+                });
+            }
+        });
     }
 
     private View.OnTouchListener onTouchListener = new View.OnTouchListener() {
@@ -435,5 +466,17 @@ public class BloodPressureDetailActivity extends AppCompatActivity {
             return;
         }
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == Request_Pulse && resultCode == Activity.RESULT_OK && data != null) {
+            int value = data.getIntExtra("data", 0);
+            if (value > 0) {
+                etInput[Index_Pulse].setText(String.valueOf(value));
+            }
+            return;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

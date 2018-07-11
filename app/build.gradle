@@ -33,4 +33,6 @@ dependencies {
     implementation 'com.alibaba:fastjson:latest.release'
     implementation "com.android.support:design:$androidsupport_version"
     implementation project(':CalendarLibrary')
+    implementation project(':UtilsLibrary')
+    implementation project(':HeartRateLibrary')
 }

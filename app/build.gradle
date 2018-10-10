@@ -6,12 +6,12 @@ android {
 
     defaultConfig {
         applicationId "org.caojun.bloodpressure"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion rootProject.ext.sdkVersion
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
     }

@@ -17,7 +17,6 @@ import org.caojun.bloodpressure.adapter.BloodPressureAdapter;
 import org.caojun.bloodpressure.ormlite.BloodPressure;
 import org.caojun.bloodpressure.ormlite.BloodPressureDatabase;
 import org.caojun.bloodpressure.utils.DataStorageUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
@@ -46,8 +45,8 @@ public class BloodPressureActivity extends AppCompatActivity {
 
         this.setContentView(R.layout.activity_bloodpressure);
 
-        listView = (StickyListHeadersListView) this.findViewById(R.id.lvBloodPressure);
-        btnAdd = (Button) this.findViewById(R.id.btnAdd);
+        listView = this.findViewById(R.id.lvBloodPressure);
+        btnAdd = this.findViewById(R.id.btnAdd);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -63,7 +62,7 @@ public class BloodPressureActivity extends AppCompatActivity {
             }
         });
 
-        rgType = (RadioGroup) findViewById(R.id.rgType);
+        rgType = findViewById(R.id.rgType);
         rgType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -84,7 +83,6 @@ public class BloodPressureActivity extends AppCompatActivity {
             adapter.setData(list);
             adapter.notifyDataSetChanged();
         }
-//        listView.setSelection(adapter.getCount() - 1);
         showList(rgType.getCheckedRadioButtonId());
     }
 

@@ -42,12 +42,12 @@ public class BMIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_bmi);
 
-        etHeight = (EditText) findViewById(R.id.etHeight);
-        btnSave = (Button) findViewById(R.id.btnSave);
-        rgStandard = (RadioGroup) findViewById(R.id.rgStandard);
+        etHeight = findViewById(R.id.etHeight);
+        btnSave = findViewById(R.id.btnSave);
+        rgStandard = findViewById(R.id.rgStandard);
         radioButtons = new RadioButton[IDStandard.length];
         for (int i = 0;i < IDStandard.length;i ++) {
-            radioButtons[i] = (RadioButton) findViewById(IDStandard[i]);
+            radioButtons[i] = findViewById(IDStandard[i]);
         }
 
         etHeight.addTextChangedListener(new TextWatcher() {

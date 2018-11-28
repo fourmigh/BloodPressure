@@ -72,9 +72,9 @@ public class TodayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_today);
 
-        listView = (ListView) findViewById(R.id.lvHistory);
-        etMonth = (EditText) findViewById(R.id.etMonth);
-        etDay = (EditText) findViewById(R.id.etDay);
+        listView = findViewById(R.id.lvHistory);
+        etMonth = findViewById(R.id.etMonth);
+        etDay = findViewById(R.id.etDay);
 
         etMonth.setEnabled(false);
         etDay.setEnabled(false);
@@ -116,8 +116,6 @@ public class TodayActivity extends AppCompatActivity {
 
     private void startGetTodayService() {
         mIntent = new Intent(this, HttpGetService.class);
-//        mIntent.putExtra("month", month);
-//        mIntent.putExtra("day", day);
         String url = URL + "?appkey=" + APPKEY + "&month=" + month + "&day=" + day;
         mIntent.putExtra(HttpGetService.URL, url);
         startService(mIntent);

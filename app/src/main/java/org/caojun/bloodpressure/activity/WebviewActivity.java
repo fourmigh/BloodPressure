@@ -26,10 +26,7 @@ public class WebviewActivity extends Activity {
         setContentView(R.layout.activity_webview);
         ARouter.getInstance().inject(this);
 
-        final WebView webView = (WebView) findViewById(R.id.webView);
-//        WebSettings settings = webView.getSettings();
-//        settings.setLoadWithOverviewMode(true);
-//        settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        final WebView webView = findViewById(R.id.webView);
 
         webView.loadDataWithBaseURL(null, content, "text/html", "utf-8", null);
     }

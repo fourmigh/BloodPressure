@@ -24,8 +24,8 @@ public class DataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
 
-        final Button btnImport = (Button) findViewById(R.id.btnImport);
-        final Button btnExport = (Button) findViewById(R.id.btnExport);
+        final Button btnImport = findViewById(R.id.btnImport);
+        final Button btnExport = findViewById(R.id.btnExport);
 
         btnImport.setEnabled(BloodPressureUtils.fileExists());
         btnExport.setEnabled(BloodPressureUtils.listExisits(this));

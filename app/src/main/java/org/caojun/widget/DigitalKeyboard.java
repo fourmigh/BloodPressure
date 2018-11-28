@@ -58,7 +58,7 @@ public class DigitalKeyboard extends TableLayout implements View.OnClickListener
 
         buttons = new Button[ResId.length];
         for (int i = 0;i < ResId.length;i ++) {
-            buttons[i] = (Button) this.findViewById(ResId[i]);
+            buttons[i] = this.findViewById(ResId[i]);
             buttons[i].setOnClickListener(this);
         }
 

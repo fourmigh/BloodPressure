@@ -66,11 +66,11 @@ public class BloodPressureAdapter extends BaseAdapter implements StickyListHeade
         if(view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_bloodpressure, null);
             holder = new ViewHolder();
-            holder.tvTime = (TextView) view.findViewById(R.id.tvTime);
-            holder.tvRemark = (TextView) view.findViewById(R.id.tvRemark);
-            holder.tvHigh = (TextView) view.findViewById(R.id.tvHigh);
-            holder.tvLow = (TextView) view.findViewById(R.id.tvLow);
-            holder.tvPulse = (TextView) view.findViewById(R.id.tvPulse);
+            holder.tvTime = view.findViewById(R.id.tvTime);
+            holder.tvRemark = view.findViewById(R.id.tvRemark);
+            holder.tvHigh = view.findViewById(R.id.tvHigh);
+            holder.tvLow = view.findViewById(R.id.tvLow);
+            holder.tvPulse = view.findViewById(R.id.tvPulse);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
@@ -93,14 +93,11 @@ public class BloodPressureAdapter extends BaseAdapter implements StickyListHeade
                 holder.tvRemark.setText(R.string.bp_medicine);
                 break;
             case BloodPressure.Type_Weight:
-//                holder.tvRemark.setText(context.getString(R.string.bp_weight_unit, String.valueOf(bloodPressure.getWeight())));
-
                 float weight = bloodPressure.getWeight();
                 String text = context.getString(R.string.bp_weight_unit, String.valueOf(weight));
                 int height = DataStorageUtils.loadInt(context, Constant.BMI_NAME, Constant.BMI_KEY_HEIGHT, 0);
                 if (height > 0) {
                     byte standard = DataStorageUtils.loadByte(context, Constant.BMI_NAME, Constant.BMI_KEY_STANDARD, Constant.BMI_CHINA);
-//                    float bmi = (weight * 10000) / (height * height);
                     float bmi = BMIUtils.getBMI(height, weight);
                     byte b = 0;
                     DecimalFormat decimalFormat = new DecimalFormat(".0");
@@ -137,7 +134,7 @@ public class BloodPressureAdapter extends BaseAdapter implements StickyListHeade
         if (convertView == null) {
             holder = new HeaderViewHolder();
             convertView = LayoutInflater.from(context).inflate(R.layout.item_bloodpressure_header, parent, false);
-            holder.tvHeader = (TextView) convertView.findViewById(R.id.tvHeader);
+            holder.tvHeader = convertView.findViewById(R.id.tvHeader);
             convertView.setTag(holder);
         } else {
             holder = (HeaderViewHolder) convertView.getTag();

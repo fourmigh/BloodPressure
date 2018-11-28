@@ -45,15 +45,15 @@ public class BMICalActivity extends AppCompatActivity {
 
         tvBMI = new TextView[ResIdBMI.length];
         for (int i = 0;i < ResIdBMI.length;i ++) {
-            tvBMI[i] = (TextView) findViewById(ResIdBMI[i]);
+            tvBMI[i] = findViewById(ResIdBMI[i]);
         }
         tvHW = new TextView[ResIdTvHW.length];
         for (int i = 0;i < ResIdTvHW.length;i ++) {
-            tvHW[i] = (TextView) findViewById(ResIdTvHW[i]);
+            tvHW[i] = findViewById(ResIdTvHW[i]);
         }
         sbHW = new SeekBar[ResIdSbHW.length];
         for (int i = 0;i < ResIdSbHW.length;i ++) {
-            sbHW[i] = (SeekBar) findViewById(ResIdSbHW[i]);
+            sbHW[i] = findViewById(ResIdSbHW[i]);
             sbHW[i].setMax(MaxHW[i]);
             sbHW[i].setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
@@ -74,7 +74,7 @@ public class BMICalActivity extends AppCompatActivity {
         }
         ivMinusHW = new ImageView[ResIdMinusHW.length];
         for (int i = 0;i < ResIdMinusHW.length;i ++) {
-            ivMinusHW[i] = (ImageView) findViewById(ResIdMinusHW[i]);
+            ivMinusHW[i] = findViewById(ResIdMinusHW[i]);
             final int index = i;
             ivMinusHW[i].setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -90,7 +90,7 @@ public class BMICalActivity extends AppCompatActivity {
         }
         ivPlusHW = new ImageView[ResIdPlusHW.length];
         for (int i = 0;i < ResIdPlusHW.length;i ++) {
-            ivPlusHW[i] = (ImageView) findViewById(ResIdPlusHW[i]);
+            ivPlusHW[i] = findViewById(ResIdPlusHW[i]);
             final int index = i;
             ivPlusHW[i].setOnClickListener(new View.OnClickListener() {
                 @Override

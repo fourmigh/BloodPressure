@@ -9,10 +9,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-
 import org.caojun.bloodpressure.Constant;
 import org.caojun.bloodpressure.R;
 import org.caojun.bloodpressure.adapter.BloodPressureAdapter;
@@ -40,7 +38,7 @@ public class CalendarActivity extends AppCompatActivity {
     private BloodPressureAdapter adapter;
     private List<BloodPressure> list, listDay;
     private Button btnAdd;
-    private CalendarDay mCcalendarDay;
+    private CalendarDay mCalendarDay;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,7 +60,7 @@ public class CalendarActivity extends AppCompatActivity {
         monthSwitchView.setOnDayClickListener(new OnDayClickListener() {
             @Override
             public void onDayClick(CalendarDay calendarDay) {
-                mCcalendarDay = calendarDay;
+                mCalendarDay = calendarDay;
                 resetListView();
             }
         });
@@ -74,7 +72,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-        mCcalendarDay = new CalendarDay();
+        mCalendarDay = new CalendarDay();
         listDay = new ArrayList<>();
     }
 
@@ -84,8 +82,7 @@ public class CalendarActivity extends AppCompatActivity {
         listDay.clear();
         for(BloodPressure bloodPressure:list) {
             CalendarDay day = new CalendarDay(bloodPressure.getTime());
-//            if (day == calendarDay) {
-            if (day.getYear() == mCcalendarDay.getYear() && day.getMonth() == mCcalendarDay.getMonth() && day.getDay() == mCcalendarDay.getDay()) {
+            if (day.getYear() == mCalendarDay.getYear() && day.getMonth() == mCalendarDay.getMonth() && day.getDay() == mCalendarDay.getDay()) {
                 listDay.add(bloodPressure);
             }
         }
@@ -114,7 +111,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         list = BloodPressureDatabase.getInstance(this).query();
 
-        monthSwitchView.setSelectDay(mCcalendarDay);
+        monthSwitchView.setSelectDay(mCalendarDay);
         resetListView();
     }
 

@@ -55,8 +55,6 @@ public class BloodPressureDetailActivity extends BaseAppCompatActivity {
     private Button btnSave, btnDelete;
     private final String dateFormat = "yyyy/MM/dd HH:mm:ss";
     private final int[] IDType = {R.id.rbBloodPressure, R.id.rbMedicine, R.id.rbWeight};
-//    private final int[] ResId = {R.string.bp_bloodpressure_msg, R.string.bp_medicine_msg, R.string.bp_weight_msg};
-//    private final String[] KeySettings = {"bloodpressure_preference", "medicine_preference", "weight_preference"};
 
     private DigitalKeyboard digitalKeyboard;
 

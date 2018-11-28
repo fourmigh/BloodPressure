@@ -54,9 +54,9 @@ public class HistoryAdapter extends BaseAdapter {
         if(view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_history, null);
             holder = new ViewHolder();
-            holder.tvYearPicture = (TextView) view.findViewById(R.id.tvYearPicture);
-            holder.tvYearNoPicture = (TextView) view.findViewById(R.id.tvYearNoPicture);
-            holder.tvTitle = (TextView) view.findViewById(R.id.tvTitle);
+            holder.tvYearPicture = view.findViewById(R.id.tvYearPicture);
+            holder.tvYearNoPicture = view.findViewById(R.id.tvYearNoPicture);
+            holder.tvTitle = view.findViewById(R.id.tvTitle);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();

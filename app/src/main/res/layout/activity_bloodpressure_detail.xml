@@ -168,6 +168,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            style="@android:style/TextAppearance.Large"
             android:text="@string/bp_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -175,6 +176,7 @@
             android:layout_weight="1" />
 
         <Button
+            style="@android:style/TextAppearance.Large"
             android:text="@string/bp_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -70,6 +70,7 @@
     </ScrollView>
 
     <Button
+        style="@android:style/TextAppearance.Large"
         android:text="@string/bp_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

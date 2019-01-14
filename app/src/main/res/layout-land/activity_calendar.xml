@@ -23,6 +23,7 @@
             android:layout_weight="1" />
 
         <Button
+            style="@android:style/TextAppearance.Large"
             android:id="@+id/btnAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

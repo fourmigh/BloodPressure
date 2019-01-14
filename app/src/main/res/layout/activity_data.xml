@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:orientation="vertical"
-    tools:context="org.caojun.bloodpressure.MainActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,12 +18,14 @@
             android:text="@string/bp_main_tips" />
 
         <Button
+            style="@android:style/TextAppearance.Large"
             android:id="@+id/btnImport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bp_import" />
 
         <Button
+            style="@android:style/TextAppearance.Large"
             android:id="@+id/btnExport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

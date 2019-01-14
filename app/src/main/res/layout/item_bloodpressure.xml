@@ -5,30 +5,35 @@
     android:theme="@style/ItemTheme">
 
     <TextView
+        style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:id="@+id/tvTime" />
 
     <TextView
+        style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/tvRemark" />
 
     <TextView
+        style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/tvHigh" />
 
     <TextView
+        style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/tvLow" />
 
     <TextView
+        style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

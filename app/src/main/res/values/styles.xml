@@ -20,4 +20,10 @@
     <style name="ItemTheme">
         <item name="android:layout_margin">4dp</item>
     </style>
+
+    <style name="TextTheme" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">22sp</item>
+    </style>
 </resources>
